@@ -6,6 +6,10 @@ export default function Header() {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Apartments', href: '/apartments' },
+    { name: 'Houses', href: '/houses' },
+    { name: 'Buy/Sell', href: '/buy-sell' },
+    { name: "Investor's Corner", href: '/investors' },
+    { name: 'Resources', href: '/resources' },
     { name: 'Contact', href: '/contact' },
   ];
   return (

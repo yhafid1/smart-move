@@ -33,6 +33,26 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/houses" className="hover:text-primary-300 transition-colors duration-200">
+                  Houses
+                </Link>
+              </li>
+              <li>
+                <Link href="/buy-sell" className="hover:text-primary-300 transition-colors duration-200">
+                  Buy/Sell
+                </Link>
+              </li>
+              <li>
+                <Link href="/investors" className="hover:text-primary-300 transition-colors duration-200">
+                  Investor's Corner
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources" className="hover:text-primary-300 transition-colors duration-200">
+                  Resources
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-primary-300 transition-colors duration-200">
                   Contact
                 </Link>

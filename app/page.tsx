@@ -164,6 +164,108 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <section className="py-20 bg-white">
+        <div className="section-container">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-neutral-900 mb-6 leading-tight">
+                Why Choose Us?
+              </h2>
+              <p className="text-xl text-neutral-600 font-body max-w-3xl mx-auto">
+                We make apartment hunting simple, fast, and completely free. Here's how we're different.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-neutral-50 p-8 rounded-lg">
+                <h3 className="text-2xl font-display font-bold text-neutral-900 mb-4">
+                  Searching on Your Own
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <span className="text-neutral-700 font-body">Hours spent searching multiple websites</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <span className="text-neutral-700 font-body">Miss exclusive deals and unadvertised specials</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <span className="text-neutral-700 font-body">No help negotiating lease terms</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <span className="text-neutral-700 font-body">Pay full application fees yourself</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <span className="text-neutral-700 font-body">Limited knowledge of neighborhoods</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-primary-300 bg-opacity-10 p-8 rounded-lg border-2 border-primary-300">
+                <h3 className="text-2xl font-display font-bold text-primary-300 mb-4">
+                  Using Smart Move DFW
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-primary-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-neutral-900 font-body font-semibold">We do all the research for you</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-primary-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-neutral-900 font-body font-semibold">Access to exclusive off-market deals</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-primary-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-neutral-900 font-body font-semibold">Expert negotiation and lease assistance</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-primary-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-neutral-900 font-body font-semibold">100% Free - Communities pay us</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-primary-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-neutral-900 font-body font-semibold">Deep local knowledge of every neighborhood</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-12 text-center">
+              <Link
+                href="/contact"
+                className="inline-block bg-primary-300 text-white px-10 py-4 rounded-lg text-lg font-sans font-semibold hover:bg-primary-400 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                Start Your Free Search
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -2,7 +2,7 @@
 
 A modern real estate platform for apartment locating and property investment services in the Dallas-Fort Worth metroplex.
 
-# Tech Stack
+## Tech Stack
 
 - Next.js 14
 - React 18
@@ -10,17 +10,17 @@ A modern real estate platform for apartment locating and property investment ser
 - Tailwind CSS
 - Vercel
 
-# Getting Started
+## Getting Started
 
 Install dependencies:
-
+```bash
 npm install
-
+```
 
 Run development server:
-
+```bash
 npm run dev
-
+```
 
 Open http://localhost:3000
 
@@ -31,7 +31,13 @@ Open http://localhost:3000
 - /data - Data files for apartments and properties
 - /public - Static assets
 
-# Deployment
+## Deployment
 
 Deployed on Vercel with automated CI/CD from GitHub.
 
+## Performance
+
+- 95+ Lighthouse performance score
+- Server-side rendering
+- Optimized image delivery
+- Responsive design

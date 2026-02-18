@@ -7,65 +7,75 @@ const processSteps = [
   {
     number: 1,
     title: 'Step 1 Title Here',
-    description: 'Edit this text to describe your first step in the apartment locating process.',
+    description: 'Edit this text to describe your first step in the house rental locating process.',
   },
   {
     number: 2,
     title: 'Step 2 Title Here',
-    description: 'Edit this text to describe your second step in the apartment locating process.',
+    description: 'Edit this text to describe your second step in the house rental locating process.',
   },
   {
     number: 3,
     title: 'Step 3 Title Here',
-    description: 'Edit this text to describe your third step in the apartment locating process.',
+    description: 'Edit this text to describe your final step in helping clients find rental homes.',
   },
 ];
 
-const featuredApartments = [
+const featuredHouses = [
   {
-    id: 'apt-1',
-    name: 'Apartment Name Here',
+    id: 'house-1',
+    name: 'House Name Here',
     city: 'Dallas',
-    price: '$1,XXX - $X,XXX',
-    beds: '1-2 Beds',
-    imageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
-    smartMoveHighlights: 'Brief description highlighting why this property is featured. Mention key benefits, current specials, or what makes it stand out.',
+    price: '$X,XXX',
+    beds: 'X Beds',
+    baths: 'X Baths',
+    sqft: 'X,XXX sqft',
+    imageUrl: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80',
+    smartMoveHighlights: 'Brief description highlighting why this rental home is featured. Mention key benefits, yard space, or what makes it stand out.',
   },
   {
-    id: 'apt-2',
-    name: 'Apartment Name Here',
+    id: 'house-2',
+    name: 'House Name Here',
     city: 'Plano',
-    price: '$1,XXX - $X,XXX',
-    beds: '1-3 Beds',
-    imageUrl: 'https://images.unsplash.com/photo-1502672260066-6bc09da3c8fe?w=1200&q=80',
-    smartMoveHighlights: 'Brief description highlighting why this property is featured. Mention key benefits, current specials, or what makes it stand out.',
+    price: '$X,XXX',
+    beds: 'X Beds',
+    baths: 'X Baths',
+    sqft: 'X,XXX sqft',
+    imageUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
+    smartMoveHighlights: 'Brief description highlighting why this rental home is featured. Mention key benefits, yard space, or what makes it stand out.',
   },
   {
-    id: 'apt-3',
-    name: 'Apartment Name Here',
+    id: 'house-3',
+    name: 'House Name Here',
     city: 'Frisco',
-    price: '$1,XXX - $X,XXX',
-    beds: '2-3 Beds',
-    imageUrl: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80',
-    smartMoveHighlights: 'Brief description highlighting why this property is featured. Mention key benefits, current specials, or what makes it stand out.',
+    price: '$X,XXX',
+    beds: 'X Beds',
+    baths: 'X Baths',
+    sqft: 'X,XXX sqft',
+    imageUrl: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80',
+    smartMoveHighlights: 'Brief description highlighting why this rental home is featured. Mention key benefits, yard space, or what makes it stand out.',
   },
   {
-    id: 'apt-4',
-    name: 'Apartment Name Here',
+    id: 'house-4',
+    name: 'House Name Here',
     city: 'Fort Worth',
-    price: '$1,XXX - $X,XXX',
-    beds: '1-2 Beds',
-    imageUrl: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80',
-    smartMoveHighlights: 'Brief description highlighting why this property is featured. Mention key benefits, current specials, or what makes it stand out.',
+    price: '$X,XXX',
+    beds: 'X Beds',
+    baths: 'X Baths',
+    sqft: 'X,XXX sqft',
+    imageUrl: 'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1200&q=80',
+    smartMoveHighlights: 'Brief description highlighting why this rental home is featured. Mention key benefits, yard space, or what makes it stand out.',
   },
   {
-    id: 'apt-5',
-    name: 'Apartment Name Here',
+    id: 'house-5',
+    name: 'House Name Here',
     city: 'Richardson',
-    price: '$1,XXX - $X,XXX',
-    beds: '1-3 Beds',
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
-    smartMoveHighlights: 'Brief description highlighting why this property is featured. Mention key benefits, current specials, or what makes it stand out.',
+    price: '$X,XXX',
+    beds: 'X Beds',
+    baths: 'X Baths',
+    sqft: 'X,XXX sqft',
+    imageUrl: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80',
+    smartMoveHighlights: 'Brief description highlighting why this rental home is featured. Mention key benefits, yard space, or what makes it stand out.',
   },
 ];
 
@@ -74,77 +84,77 @@ const neighborhoods = [
     id: 'uptown-dallas',
     name: 'Uptown Dallas',
     city: 'Dallas',
-    description: 'Edit this description to highlight what makes Uptown special - walkability, nightlife, dining scene, young professional vibe.',
-    avgRent: '$1,800 - $2,500',
-    topAmenities: ['Walkable', 'Nightlife', 'Restaurants', 'Shopping'],
+    description: 'Edit this description to highlight rental homes in Uptown - walkability, urban living, access to amenities.',
+    avgRent: '$2,500 - $4,000',
+    topAmenities: ['Urban Living', 'Walkable', 'Restaurants', 'Entertainment'],
     imageUrl: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&q=80',
   },
   {
     id: 'plano',
     name: 'Plano',
     city: 'Plano',
-    description: 'Edit this description to describe Plano - family-friendly, excellent schools, corporate headquarters, suburban feel.',
-    avgRent: '$1,400 - $2,200',
-    topAmenities: ['Great Schools', 'Safe', 'Corporate Jobs', 'Family-Friendly'],
+    description: 'Edit this description for Plano rental homes - family neighborhoods, excellent schools, spacious yards, suburban comfort.',
+    avgRent: '$2,200 - $3,500',
+    topAmenities: ['Great Schools', 'Family-Friendly', 'Yards', 'Safe'],
     imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80',
   },
   {
     id: 'frisco',
     name: 'Frisco',
     city: 'Frisco',
-    description: 'Edit this description about Frisco - rapid growth, new developments, sports venues, modern amenities.',
-    avgRent: '$1,600 - $2,400',
-    topAmenities: ['New Development', 'Sports', 'Shopping', 'Growing'],
+    description: 'Edit this description for Frisco rental homes - newer constructions, modern amenities, family-oriented communities.',
+    avgRent: '$2,400 - $3,800',
+    topAmenities: ['New Homes', 'Modern', 'Sports', 'Growing'],
     imageUrl: 'https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=1200&q=80',
   },
   {
     id: 'fort-worth',
     name: 'Fort Worth',
     city: 'Fort Worth',
-    description: 'Edit this description about Fort Worth - Western heritage, cultural district, lower cost of living, unique character.',
-    avgRent: '$1,200 - $1,900',
-    topAmenities: ['Affordable', 'Culture', 'Western Charm', 'Museums'],
+    description: 'Edit this description for Fort Worth rental homes - character homes, larger lots, better value, western charm.',
+    avgRent: '$1,800 - $3,000',
+    topAmenities: ['Affordable', 'Large Lots', 'Character', 'Space'],
     imageUrl: 'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1200&q=80',
   },
   {
     id: 'richardson',
     name: 'Richardson',
     city: 'Richardson',
-    description: 'Edit this description about Richardson - central location, tech corridor, diversity, convenient access.',
-    avgRent: '$1,300 - $2,000',
-    topAmenities: ['Central', 'Tech Jobs', 'Diverse', 'Transit'],
+    description: 'Edit this description for Richardson rental homes - central location, diverse neighborhoods, convenient access.',
+    avgRent: '$2,000 - $3,200',
+    topAmenities: ['Central', 'Diverse', 'Convenient', 'Established'],
     imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
   },
   {
     id: 'arlington',
     name: 'Arlington',
     city: 'Arlington',
-    description: 'Edit this description about Arlington - entertainment district, sports venues, central DFW location, value.',
-    avgRent: '$1,100 - $1,800',
-    topAmenities: ['Sports', 'Entertainment', 'Affordable', 'Central'],
+    description: 'Edit this description for Arlington rental homes - entertainment proximity, family neighborhoods, good value.',
+    avgRent: '$1,700 - $2,800',
+    topAmenities: ['Entertainment', 'Family Areas', 'Value', 'Central'],
     imageUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
   },
   {
     id: 'addison',
     name: 'Addison',
     city: 'Addison',
-    description: 'Edit this description about Addison - walkable, restaurant scene, young professionals, central location.',
-    avgRent: '$1,500 - $2,300',
-    topAmenities: ['Walkable', 'Dining', 'Central', 'Young Professionals'],
+    description: 'Edit this description for Addison rental homes - urban convenience, smaller community feel, central location.',
+    avgRent: '$2,300 - $3,600',
+    topAmenities: ['Central', 'Urban', 'Dining', 'Convenient'],
     imageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
   },
   {
     id: 'irving',
     name: 'Irving',
     city: 'Irving',
-    description: 'Edit this description about Irving - diverse, near airport, corporate presence, good value.',
-    avgRent: '$1,200 - $1,900',
-    topAmenities: ['Diverse', 'Airport Access', 'Corporate Jobs', 'Value'],
+    description: 'Edit this description for Irving rental homes - diverse neighborhoods, near airport, corporate proximity, value.',
+    avgRent: '$1,900 - $3,100',
+    topAmenities: ['Diverse', 'Airport', 'Value', 'Corporate'],
     imageUrl: 'https://images.unsplash.com/photo-1502672260066-6bc09da3c8fe?w=1200&q=80',
   },
 ];
 
-export default function ApartmentsPage() {
+export default function HousesPage() {
   return (
     <>
       <section className="py-16 md:py-20 bg-white">
@@ -176,55 +186,67 @@ export default function ApartmentsPage() {
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-neutral-900 mb-6 leading-tight">
-              Apartments of the Week!
+              Houses of the Week!
             </h2>
             <p className="text-xl md:text-2xl text-neutral-600 font-body">
-              Handpicked apartments across the Dallas-Fort Worth metroplex. Updated weekly with the best deals and newest openings.
+              Featured rental homes across the Dallas-Fort Worth metroplex. Updated weekly with exceptional properties.
             </p>
           </div>
 
           <div className="max-w-6xl mx-auto space-y-16">
-            {featuredApartments.map((apartment, index) => {
+            {featuredHouses.map((house, index) => {
               const isEven = index % 2 === 0;
               
               return (
                 <div
-                  key={apartment.id}
+                  key={house.id}
                   className={`flex flex-col ${
                     isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
                   } gap-8 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 cursor-pointer`}
                 >
                   <div className="lg:w-5/12 relative h-80 lg:h-auto">
                     <Image
-                      src={apartment.imageUrl}
-                      alt={apartment.name}
+                      src={house.imageUrl}
+                      alt={house.name}
                       fill
                       className="object-cover"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
                       <h3 className="text-2xl font-display font-bold text-white mb-1">
-                        {apartment.name}
+                        {house.name}
                       </h3>
                       <p className="text-neutral-200 font-sans text-sm">
-                        {apartment.city}
+                        {house.city}
                       </p>
                     </div>
                   </div>
 
                   <div className="lg:w-7/12 p-8 flex flex-col justify-center">
                     <div className="mb-6">
-                      <div className="flex flex-wrap gap-4 text-neutral-700 mb-4">
+                      <div className="grid grid-cols-2 gap-4 text-neutral-700 mb-4">
                         <div className="flex items-center gap-2">
                           <svg className="w-5 h-5 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
-                          <span className="font-sans font-semibold">{apartment.price}</span>
+                          <span className="font-sans font-semibold">{house.price}/mo</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <svg className="w-5 h-5 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                           </svg>
-                          <span className="font-sans font-semibold">{apartment.beds}</span>
+                          <span className="font-sans font-semibold">{house.beds}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <svg className="w-5 h-5 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                          <span className="font-sans font-semibold">{house.baths}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <svg className="w-5 h-5 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                          </svg>
+                          <span className="font-sans font-semibold">{house.sqft}</span>
                         </div>
                       </div>
                     </div>
@@ -234,7 +256,7 @@ export default function ApartmentsPage() {
                         Smart Move Highlights
                       </h4>
                       <p className="text-neutral-700 font-body leading-relaxed">
-                        {apartment.smartMoveHighlights}
+                        {house.smartMoveHighlights}
                       </p>
                     </div>
 
@@ -261,7 +283,7 @@ export default function ApartmentsPage() {
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-8">
-              Find Apartments by Budget
+              Shop by Budget
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Link
@@ -270,10 +292,10 @@ export default function ApartmentsPage() {
               >
                 <div className="text-center">
                   <div className="text-3xl font-display font-bold text-primary-300 mb-2">
-                    Under $1,500
+                    Under $2,000
                   </div>
                   <p className="text-neutral-600 font-body mb-4">
-                    Budget-friendly options across DFW
+                    Affordable rental homes across DFW
                   </p>
                   <span className="text-sm font-sans font-semibold text-primary-300 group-hover:translate-x-1 inline-flex items-center gap-2 transition-transform duration-300">
                     View Options
@@ -290,10 +312,10 @@ export default function ApartmentsPage() {
               >
                 <div className="text-center">
                   <div className="text-3xl font-display font-bold text-primary-300 mb-2">
-                    $1,500 - $2,000
+                    $2,000 - $3,500
                   </div>
                   <p className="text-neutral-600 font-body mb-4">
-                    Great value in prime locations
+                    Quality homes in prime locations
                   </p>
                   <span className="text-sm font-sans font-semibold text-primary-300 group-hover:translate-x-1 inline-flex items-center gap-2 transition-transform duration-300">
                     View Options
@@ -310,10 +332,10 @@ export default function ApartmentsPage() {
               >
                 <div className="text-center">
                   <div className="text-3xl font-display font-bold text-primary-300 mb-2">
-                    $2,000+
+                    $3,500+
                   </div>
                   <p className="text-neutral-600 font-body mb-4">
-                    Luxury apartments with premium amenities
+                    Luxury rental homes with premium features
                   </p>
                   <span className="text-sm font-sans font-semibold text-primary-300 group-hover:translate-x-1 inline-flex items-center gap-2 transition-transform duration-300">
                     View Options
@@ -333,10 +355,10 @@ export default function ApartmentsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-6">
-                Find Apartments by Neighborhood
+                Shop by Neighborhood
               </h2>
               <p className="text-xl text-neutral-600 font-body">
-                Explore apartments in the best areas across the Dallas-Fort Worth metroplex.
+                Explore rental homes in the best areas across the Dallas-Fort Worth metroplex.
               </p>
             </div>
 
@@ -400,7 +422,7 @@ export default function ApartmentsPage() {
                           href="/contact"
                           className="inline-flex items-center gap-2 bg-neutral-50 text-neutral-900 px-6 py-3 rounded-md font-sans font-semibold hover:bg-primary-300 hover:text-neutral-50 transition-all duration-300 border-2 border-neutral-300 hover:border-primary-300"
                         >
-                          View Apartments in {neighborhood.name}
+                          View Houses in {neighborhood.name}
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                           </svg>
@@ -419,16 +441,16 @@ export default function ApartmentsPage() {
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Ready to Find Your Perfect Apartment?
+              Ready to Find Your Perfect Rental Home?
             </h2>
             <p className="text-xl font-body mb-8 text-neutral-300">
-              Let's start your apartment search today. Free consultation, no obligation.
+              Let's start your house search today. Professional guidance every step of the way.
             </p>
             <Link
               href="/contact"
               className="inline-block bg-neutral-50 text-neutral-900 px-10 py-4 rounded-lg text-lg font-sans font-semibold hover:bg-primary-300 hover:text-neutral-50 transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
-              Get Started Free
+              Get Started
             </Link>
           </div>
         </div>
