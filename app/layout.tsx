@@ -3,12 +3,12 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dfwapartmentlocator.com'),
+  metadataBase: new URL('https://smartmovedfw.com'),
   title: {
-    default: 'DFW Apartment Locator | Find Your Perfect Apartment in Dallas-Fort Worth',
-    template: '%s | DFW Apartment Locator',
+    default: 'Smart Move DFW | Find Your Perfect Apartment in Dallas-Fort Worth',
+    template: '%s | Smart Move DFW',
   },
-  description: 'Expert apartment locating service in the Dallas-Fort Worth metroplex. Find your perfect home with personalized service, local expertise, and access to exclusive listings. Free apartment search assistance.',
+  description: 'Apartment locating service in the Dallas-Fort Worth metroplex. Find your perfect home with personalized service, local expertise, and access to exclusive listings. Free apartment search assistance.',
   keywords: [
     'DFW apartments',
     'Dallas apartments',
@@ -21,29 +21,28 @@ export const metadata: Metadata = {
     'Irving apartments',
     'real estate DFW',
   ],
-  authors: [{ name: 'DFW Apartment Locator' }],
-  creator: 'DFW Apartment Locator',
-  publisher: 'JPAR Realty',
+  authors: [{ name: 'Smart Move DFW' }],
+  creator: 'Smart Move DFW',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://dfwapartmentlocator.com',
-    siteName: 'DFW Apartment Locator',
-    title: 'DFW Apartment Locator | Find Your Perfect Apartment in Dallas-Fort Worth',
-    description: 'Expert apartment locating service in the Dallas-Fort Worth metroplex. Free personalized apartment search assistance.',
+    url: 'https://smartmovedfw.com',
+    siteName: 'Smart Move DFW',
+    title: 'Smart Move DFW | Find Your Perfect Apartment in Dallas-Fort Worth',
+    description: 'Apartment locating service in the Dallas-Fort Worth metroplex. Free personalized apartment search assistance.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'DFW Apartment Locator',
+        alt: 'Smart Move DFW',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DFW Apartment Locator | Find Your Perfect Apartment',
-    description: 'Expert apartment locating service in Dallas-Fort Worth. Free personalized search assistance.',
+    title: 'Smart Move DFW | Find Your Perfect Apartment',
+    description: 'Apartment locating service in Dallas-Fort Worth. Free personalized search assistance.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -73,7 +72,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link 
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" 
+          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600;700&display=swap" 
           rel="stylesheet" 
         />
         {}
@@ -83,11 +82,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'RealEstateAgent',
-              name: 'DFW Apartment Locator',
-              description: 'Professional apartment locating service in Dallas-Fort Worth',
-              url: 'https://dfwapartmentlocator.com',
+              name: 'Smart Move DFW',
+              description: 'Apartment locating service in Dallas-Fort Worth',
+              url: 'https://smartmovedfw.com',
               telephone: '(214) 555-0100',
-              email: 'info@dfwapartmentlocator.com',
+              email: 'info@smartmovedfw.com',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Dallas',

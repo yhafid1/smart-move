@@ -1,6 +1,19 @@
 const nextConfig = {
   images: {
-    domains: ['images.unsplash.com', 'placehold.co'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'maps.googleapis.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+      },
+    ],
   },
 }
 

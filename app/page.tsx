@@ -1,163 +1,105 @@
 'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useRef } from 'react';
+
+function useScrollReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('revealed');
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    const elements = ref.current?.querySelectorAll('.reveal');
+    elements?.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+  return ref;
+}
+
 export default function HomePage() {
+  const pageRef = useScrollReveal();
+
   return (
-    <>
-      {}
+    <div ref={pageRef}>
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=80"
-            alt="Modern DFW Housing"
-            fill
-            className="object-cover scale-105 animate-slow-zoom"
-            priority
-          />
-          {}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+          <Image src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=80" alt="Modern DFW Housing" fill className="object-cover animate-slow-zoom" priority />
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
-        {}
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold text-neutral-50 mb-6 tracking-tight leading-none">
-            Smart Move DFW
-          </h1>
-          <p className="text-2xl md:text-3xl lg:text-4xl text-primary-300 font-body font-light mb-10 tracking-wide italic">
-            Make the Smart Move
+        <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+          <div className="animate-fade-up">
+            <p className="heading-sm text-white/70 mb-6">Dallas-Fort Worth Real Estate</p>
+          </div>
+          <h1 className="heading-xl text-white mb-8 animate-fade-up-delay-1">Smart Move DFW</h1>
+          <div className="w-24 h-0.5 bg-primary-300 mx-auto mb-8 line-grow"></div>
+          <p className="text-xl md:text-2xl text-white/80 font-body font-light mb-12 max-w-2xl mx-auto animate-fade-up-delay-2">
+            Expert apartment locating and real estate services across the metroplex. Completely free.
           </p>
-          <button
-            onClick={() => {
-              document.getElementById('services')?.scrollIntoView({ 
-                behavior: 'smooth' 
-              });
-            }}
-            className="bg-neutral-50 text-neutral-900 px-10 py-4 rounded-lg text-lg font-sans font-semibold hover:bg-primary-300 hover:text-neutral-50 transition-all duration-300 transform hover:scale-105 shadow-xl"
-          >
-            Explore Services
-          </button>
+          <div className="animate-fade-up-delay-3">
+            <Link href="/apartments" className="btn-primary bg-white text-neutral-900 hover:bg-primary-300 hover:text-white">Start Your Search</Link>
+          </div>
         </div>
-        {}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <svg 
-            className="w-6 h-6 text-white opacity-75" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M19 14l-7 7m0 0l-7-7m7 7V3" 
-            />
-          </svg>
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-px h-16 bg-white/40"></div>
         </div>
       </section>
-      {}
-      <section id="services" className="py-20 md:py-32 bg-neutral-50">
+
+      <section id="services" className="section-padding bg-white">
         <div className="section-container">
-          {}
-          <div className="text-center mb-16 animate-slide-up">
-            <h2 className="text-5xl md:text-6xl font-display font-bold text-neutral-900 mb-6 leading-tight">
-              Our Services
-            </h2>
-            <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl mx-auto font-body">
-              Comprehensive real estate solutions tailored to your needs
-            </p>
+          <div className="reveal mb-20">
+            <p className="heading-sm mb-4">What We Do</p>
+            <h2 className="heading-lg text-neutral-900 mb-6">Our Services</h2>
+            <div className="divider"></div>
           </div>
-          {}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {}
-            <Link 
-              href="/apartments" 
-              className="group relative h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-slide-up"
-            >
-              {}
-              <div className="absolute inset-0">
-                <Image
-                  src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80"
-                  alt="Modern Apartments"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
-              </div>
-              {}
-              <div className="relative h-full flex flex-col justify-end p-8 text-white">
-                <h3 className="text-3xl md:text-4xl font-display font-bold mb-3 leading-tight">
-                  Apartment Locating
-                </h3>
-                <p className="text-lg md:text-xl text-neutral-200 mb-4 line-clamp-2 font-body">
-                  Discover your perfect apartment in the DFW metroplex. Free locating service with access to exclusive listings.
-                </p>
-                <div className="flex items-center text-neutral-50 font-sans font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                  Browse Apartments
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link href="/apartments" className="group reveal reveal-delay-1">
+              <div className="relative h-[480px] overflow-hidden">
+                <Image src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80" alt="Apartment Locating" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <p className="text-xs font-display uppercase tracking-[0.3em] text-primary-300 mb-3">Free Service</p>
+                  <h3 className="text-2xl font-display font-bold text-white uppercase tracking-wider mb-3">Apartment Locating</h3>
+                  <p className="text-white/70 font-body text-sm mb-4">Expert apartment search across DFW. We do the research, you pick your favorite.</p>
+                  <span className="inline-flex items-center gap-2 text-white font-display text-xs uppercase tracking-widest group-hover:gap-4 transition-all duration-300">
+                    Browse Apartments
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </span>
                 </div>
               </div>
             </Link>
-            {}
-            <Link 
-              href="/homes" 
-              className="group relative h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-slide-up animate-delay-100"
-            >
-              {}
-              <div className="absolute inset-0">
-                <Image
-                  src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80"
-                  alt="Residential Homes"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
-              </div>
-              {}
-              <div className="relative h-full flex flex-col justify-end p-8 text-white">
-                <h3 className="text-3xl md:text-4xl font-display font-bold mb-3 leading-tight">
-                  Residential Homes
-                </h3>
-                <p className="text-lg md:text-xl text-neutral-200 mb-4 line-clamp-2 font-body">
-                  From cozy townhomes to spacious family houses. Your dream home awaits in DFW's finest neighborhoods.
-                </p>
-                <div className="flex items-center text-neutral-50 font-sans font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                  View Homes
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+            <Link href="/buy-sell" className="group reveal reveal-delay-2">
+              <div className="relative h-[480px] overflow-hidden">
+                <Image src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80" alt="Buy and Sell" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <p className="text-xs font-display uppercase tracking-[0.3em] text-primary-300 mb-3">Buy & Sell</p>
+                  <h3 className="text-2xl font-display font-bold text-white uppercase tracking-wider mb-3">Purchase a Home</h3>
+                  <p className="text-white/70 font-body text-sm mb-4">Professional guidance buying or selling residential properties throughout DFW.</p>
+                  <span className="inline-flex items-center gap-2 text-white font-display text-xs uppercase tracking-widest group-hover:gap-4 transition-all duration-300">
+                    View Homes
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </span>
                 </div>
               </div>
             </Link>
-            {}
-            <Link 
-              href="/investors" 
-              className="group relative h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-slide-up animate-delay-200"
-            >
-              {}
-              <div className="absolute inset-0">
-                <Image
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
-                  alt="Investment Properties"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
-              </div>
-              {}
-              <div className="relative h-full flex flex-col justify-end p-8 text-white">
-                <h3 className="text-3xl md:text-4xl font-display font-bold mb-3 leading-tight">
-                  Investor's Corner
-                </h3>
-                <p className="text-lg md:text-xl text-neutral-200 mb-4 line-clamp-2 font-body">
-                  Curated investment opportunities with strong returns. Multi-family properties across the DFW metroplex.
-                </p>
-                <div className="flex items-center text-neutral-50 font-sans font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                  Explore Investments
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+            <Link href="/investors" className="group reveal reveal-delay-3">
+              <div className="relative h-[480px] overflow-hidden">
+                <Image src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Investors Corner" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <p className="text-xs font-display uppercase tracking-[0.3em] text-primary-300 mb-3">Exclusive Access</p>
+                  <h3 className="text-2xl font-display font-bold text-white uppercase tracking-wider mb-3">Investor's Corner</h3>
+                  <p className="text-white/70 font-body text-sm mb-4">Curated off-market deals and investment opportunities across the DFW metroplex.</p>
+                  <span className="inline-flex items-center gap-2 text-white font-display text-xs uppercase tracking-widest group-hover:gap-4 transition-all duration-300">
+                    Request Access
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </span>
                 </div>
               </div>
             </Link>
@@ -165,107 +107,65 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="section-padding bg-neutral-900 text-white relative overflow-hidden">
+        <div className="section-container relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div>
+              <div className="reveal">
+                <p className="heading-sm text-primary-300 mb-4">Why Choose Us</p>
+                <h2 className="heading-lg text-white mb-8">The Smart Way to Find Home</h2>
+                <div className="divider mb-8"></div>
+              </div>
+              <div className="space-y-6">
+                {[
+                  { n: '01', title: 'We Do the Research', body: 'Hours of searching condensed into a curated list tailored to your needs.' },
+                  { n: '02', title: 'Exclusive Off-Market Deals', body: 'Access specials and listings you won\'t find on public websites.' },
+                  { n: '03', title: 'Expert Negotiation', body: 'We negotiate lease terms and move-in costs on your behalf.' },
+                  { n: '04', title: '100% Free to You', body: 'Apartment communities compensate us. You pay absolutely nothing.' },
+                ].map((item, i) => (
+                  <div key={item.n} className={`reveal reveal-delay-${i + 1} flex items-start gap-4`}>
+                    <div className="w-10 h-10 flex-shrink-0 border border-primary-300 flex items-center justify-center">
+                      <span className="text-primary-300 font-display text-sm font-bold">{item.n}</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-display font-bold uppercase tracking-wider mb-1 text-white">{item.title}</h3>
+                      <p className="text-white/60 font-body">{item.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="reveal reveal-delay-2">
+              <div className="relative">
+                <div className="relative h-[500px] overflow-hidden">
+                  <Image src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Modern apartment" fill className="object-cover" />
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-primary-300 text-white p-8">
+                  <p className="text-4xl font-display font-bold">100%</p>
+                  <p className="text-sm font-display uppercase tracking-widest">Free Service</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
         <div className="section-container">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-neutral-900 mb-6 leading-tight">
-                Why Choose Us?
-              </h2>
-              <p className="text-xl text-neutral-600 font-body max-w-3xl mx-auto">
-                We make apartment hunting simple, fast, and completely free. Here's how we're different.
-              </p>
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="reveal">
+              <p className="heading-sm mb-4">Get Started</p>
+              <h2 className="heading-lg text-neutral-900 mb-8">Ready to Make Your Move?</h2>
+              <div className="divider mx-auto mb-8"></div>
+              <p className="body-lg mb-12">Whether searching for an apartment or buying a home, we guide you every step of the way.</p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-neutral-50 p-8 rounded-lg">
-                <h3 className="text-2xl font-display font-bold text-neutral-900 mb-4">
-                  Searching on Your Own
-                </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                    <span className="text-neutral-700 font-body">Hours spent searching multiple websites</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                    <span className="text-neutral-700 font-body">Miss exclusive deals and unadvertised specials</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                    <span className="text-neutral-700 font-body">No help negotiating lease terms</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                    <span className="text-neutral-700 font-body">Pay full application fees yourself</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                    <span className="text-neutral-700 font-body">Limited knowledge of neighborhoods</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-primary-300 bg-opacity-10 p-8 rounded-lg border-2 border-primary-300">
-                <h3 className="text-2xl font-display font-bold text-primary-300 mb-4">
-                  Using Smart Move DFW
-                </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-primary-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-neutral-900 font-body font-semibold">We do all the research for you</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-primary-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-neutral-900 font-body font-semibold">Access to exclusive off-market deals</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-primary-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-neutral-900 font-body font-semibold">Expert negotiation and lease assistance</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-primary-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-neutral-900 font-body font-semibold">100% Free - Communities pay us</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-primary-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-neutral-900 font-body font-semibold">Deep local knowledge of every neighborhood</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-12 text-center">
-              <Link
-                href="/contact"
-                className="inline-block bg-primary-300 text-white px-10 py-4 rounded-lg text-lg font-sans font-semibold hover:bg-primary-400 transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                Start Your Free Search
-              </Link>
+            <div className="reveal reveal-delay-2 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn-primary">Contact Us Today</Link>
+              <Link href="/apartments" className="btn-outline">Browse Apartments</Link>
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

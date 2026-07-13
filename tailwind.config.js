@@ -8,16 +8,16 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#f7faf8',
-          100: '#eff5f0',
-          200: '#d7e6da',
-          300: '#839F87',
-          400: '#6d8a71',
-          500: '#57745b',
-          600: '#465d49',
-          700: '#374a3a',
-          800: '#2a382c',
-          900: '#1f2921',
+          50: '#e8f0e8',
+          100: '#c4d4c4',
+          200: '#7aab7a',
+          300: '#0E390E',
+          400: '#0b2f0b',
+          500: '#092509',
+          600: '#071d07',
+          700: '#051505',
+          800: '#030e03',
+          900: '#010701',
         },
         accent: {
           50: '#f5f3f0',
@@ -32,7 +32,7 @@ module.exports = {
           900: '#2a1a0e',
         },
         neutral: {
-          50: '#F6F4EE',
+          50: '#FFFFFF',
           100: '#f5f5f5',
           200: '#e5e5e5',
           300: '#d4d4d4',
@@ -45,9 +45,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        display: ['Playfair Display', 'Georgia', 'serif'],
-        body: ['Cormorant Garamond', 'Georgia', 'serif'],
-        sans: ['Source Sans 3', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Barlow Condensed', 'sans-serif'],
+        body: ['Barlow', 'sans-serif'],
+        sans: ['Barlow', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

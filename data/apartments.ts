@@ -1,106 +1,34 @@
-import { Apartment } from './types';
-/**
- * APARTMENTS DATA FILE
- * 
- * This file contains all apartment listings for the "Apartments of the Week" section.
- * 
- * HOW TO UPDATE LISTINGS:
- * 1. Edit the apartments array below
- * 2. Set featured: true for listings you want to highlight on the home page (max 3-4 recommended)
- * 3. Add new listings by copying the template below
- * 4. Commit changes to GitHub - Vercel will auto-deploy
- * 
- * LISTING TEMPLATE:
- * {
- *   id: 'unique-id',
- *   name: 'Apartment Name',
- *   location: 'Neighborhood/Area',
- *   city: 'City, TX',
- *   priceRange: '$1,200 - $2,000',
- *   bedrooms: '1-2 Beds',
- *   amenities: ['Pool', 'Fitness Center', 'Pet Friendly'],
- *   description: 'Brief description highlighting key features',
- *   imageUrl: 'https://placehold.co/800x600/e7cfb8/525252?text=Apartment+Name',
- *   featured: true, 
- * }
- */
-export const apartments: Apartment[] = [
-  {
-    id: 'skyline-uptown',
-    name: 'Skyline Towers',
-    location: 'Uptown Dallas',
-    city: 'Dallas, TX',
-    priceRange: '$1,500 - $2,800',
-    bedrooms: '1-3 Beds',
-    amenities: ['Rooftop Pool', 'Fitness Center', '24/7 Concierge', 'Pet Friendly', 'Parking Garage'],
-    description: 'Luxury high-rise living in the heart of Uptown. Walking distance to restaurants, entertainment, and the Katy Trail. Floor-to-ceiling windows with stunning city views.',
-    imageUrl: 'https://placehold.co/800x600/e7cfb8/525252?text=Skyline+Towers',
-    featured: true,
-  },
-  {
-    id: 'legacy-west',
-    name: 'Legacy West Residences',
-    location: 'Legacy West',
-    city: 'Plano, TX',
-    priceRange: '$1,800 - $3,200',
-    bedrooms: '1-2 Beds',
-    amenities: ['Resort-Style Pool', 'Smart Home Tech', 'Dog Park', 'Business Center', 'Valet Service'],
-    description: 'Modern apartments adjacent to The Shops at Legacy. Premium finishes, smart home features, and direct access to dining and shopping.',
-    imageUrl: 'https://placehold.co/800x600/d9b08f/525252?text=Legacy+West',
-    featured: true,
-  },
-  {
-    id: 'bishop-arts',
-    name: 'The Bishop',
-    location: 'Bishop Arts District',
-    city: 'Dallas, TX',
-    priceRange: '$1,300 - $2,200',
-    bedrooms: '1-2 Beds',
-    amenities: ['Rooftop Lounge', 'Bike Storage', 'Pet Spa', 'Coffee Bar', 'Co-Working Space'],
-    description: 'Boutique community in trendy Bishop Arts. Walk to galleries, local restaurants, and unique shops. Industrial-chic design with exposed brick and modern finishes.',
-    imageUrl: 'https://placehold.co/800x600/ca8f65/525252?text=The+Bishop',
-    featured: true,
-  },
-  {
-    id: 'southlake-town',
-    name: 'Southlake Town Square Apartments',
-    location: 'Southlake Town Square',
-    city: 'Southlake, TX',
-    priceRange: '$1,900 - $3,500',
-    bedrooms: '1-3 Beds',
-    amenities: ['Infinity Pool', 'Wine Room', 'Guest Suites', 'Gourmet Kitchens', 'Private Balconies'],
-    description: 'Upscale living at Southlake Town Square. Steps from high-end shopping and dining. Award-winning schools and family-friendly community.',
-    imageUrl: 'https://placehold.co/800x600/b8794e/525252?text=Southlake+Square',
-    featured: false,
-  },
-  {
-    id: 'deep-ellum-lofts',
-    name: 'Deep Ellum Lofts',
-    location: 'Deep Ellum',
-    city: 'Dallas, TX',
-    priceRange: '$1,400 - $2,500',
-    bedrooms: 'Studio-2 Beds',
-    amenities: ['Urban Garden', 'Art Gallery', 'Music Studios', 'Bike Repair Shop', 'Pet Friendly'],
-    description: 'Converted warehouse lofts in Dallas\' most artistic neighborhood. High ceilings, exposed ductwork, and creative community. Live music and nightlife at your doorstep.',
-    imageUrl: 'https://placehold.co/800x600/9d6542/525252?text=Deep+Ellum+Lofts',
-    featured: false,
-  },
-  {
-    id: 'frisco-square',
-    name: 'Frisco Square Flats',
-    location: 'Frisco Square',
-    city: 'Frisco, TX',
-    priceRange: '$1,600 - $2,700',
-    bedrooms: '1-2 Beds',
-    amenities: ['Saltwater Pool', 'Outdoor Kitchen', 'Tech Lounge', 'Yoga Studio', 'Package Concierge'],
-    description: 'Modern apartments in Frisco\'s urban center. Walk to restaurants, movie theater, and events. Top-rated schools and family amenities nearby.',
-    imageUrl: 'https://placehold.co/800x600/7f4f39/525252?text=Frisco+Square',
-    featured: false,
-  },
+export interface Apartment {
+  id: string;
+  name: string;
+  city: string;
+  pool: string;
+  address: string;
+  price: string;
+  beds: string;
+  imageUrl: string;
+  smartMoveHighlights: string;
+}
+
+export const allApartments: Apartment[] = [
+  { id: 'dal-1', name: 'The Wellington on McKinney', city: 'Dallas', pool: 'Dallas', address: 'Uptown Dallas, TX 75204', price: 'Studio $1,350+ · 1bd $1,600+ · 2bd $2,350+', beds: 'Studio - 2 Beds', imageUrl: '/apartments/monterey-by-windsor.jpg', smartMoveHighlights: 'Located in the heart of Uptown. Walkable to restaurants, boutiques, and the Katy Trail. Rooftop pool with skyline views and resort-style amenities.' },
+  { id: 'dal-2', name: 'Skyline Uptown Residences', city: 'Dallas', pool: 'Dallas', address: 'Uptown Dallas, TX 75204', price: 'Studio $1,900+ · 1bd $2,000+ · 2bd $2,600+', beds: 'Studio - 2 Beds', imageUrl: '/apartments/alara-uptown.jpg', smartMoveHighlights: 'Luxury high-rise in Uptown Dallas steps from top dining and nightlife. Floor-to-ceiling windows, designer finishes, and concierge services. Pet friendly.' },
+  { id: 'dal-3', name: 'Parkside at Cole', city: 'Dallas', pool: 'Dallas', address: 'Uptown Dallas, TX 75204', price: '1bd $1,650+ · 2bd $2,700+', beds: '1-2 Beds', imageUrl: '/apartments/uptown-cole-park.jpg', smartMoveHighlights: 'Uptown living adjacent to a neighborhood park with easy access to the Katy Trail. Modern interiors, resort pool, and attached parking garage.' },
+  { id: 'dal-4', name: 'Bellmar Village', city: 'Dallas', pool: 'Dallas', address: 'North Dallas, TX 75230', price: '1bd $1,000+ · 2bd $1,500+', beds: '1-2 Beds', imageUrl: '/apartments/everton-bellmar.jpg', smartMoveHighlights: 'Affordable North Dallas living with multiple available units. Multiple floor plan options, updated interiors, and easy access to major employers along the Tollway corridor.' },
+  { id: 'ndal-1', name: 'The Hollow at Preston', city: 'North Dallas', pool: 'North Dallas', address: 'Preston Hollow, Dallas, TX 75225', price: '1bd $3,000+ · 2bd $3,300+', beds: '1-2 Beds', imageUrl: '/apartments/laurel-preston-hollow.jpg', smartMoveHighlights: 'Boutique luxury living in the prestigious Preston Hollow neighborhood. Chef-inspired kitchens, private terraces, and concierge service.' },
+  { id: 'ndal-2', name: 'Renaissance Thackery', city: 'North Dallas', pool: 'North Dallas', address: 'Preston Hollow, Dallas, TX 75225', price: '1bd $1,600+ · 2bd $2,550+ · 3bd $3,950+', beds: '1-3 Beds', imageUrl: '/apartments/renaissance-preston-hollow.jpg', smartMoveHighlights: 'Upscale North Dallas community in the heart of Preston Hollow. Gourmet kitchens, 9-foot ceilings, and resort-style pool.' },
+  { id: 'ndal-3', name: 'Bandera Luxury Residences', city: 'North Dallas', pool: 'North Dallas', address: 'Preston Hollow, Dallas, TX 75225', price: '2bd $5,000+', beds: '2 Beds', imageUrl: '/apartments/park-hollow-luxury.jpg', smartMoveHighlights: 'Ultra-premium North Dallas residences offering over 2,200 sqft of refined living space. Private garages, dedicated concierge, and curated interiors.' },
+  { id: 'pla-1', name: 'Baywater Lakeside', city: 'Plano', pool: 'Plano', address: 'West Plano, TX 75093', price: '1bd $1,700+ · 2bd $2,300+ · 3bd $2,400+ · 4bd $3,250+', beds: '1-4 Beds', imageUrl: '/apartments/heritage-at-lakeside.jpg', smartMoveHighlights: "Premium lakeside community near Willow Bend. One of Plano's most sought-after addresses, with special move-in offers available." },
+  { id: 'pla-2', name: 'Windcrest Creekside', city: 'Plano', pool: 'Plano', address: 'Legacy West, Plano, TX 75024', price: '1bd $1,400+ · 2bd $2,100+ · 3bd $2,600+', beds: '1-3 Beds', imageUrl: '/apartments/creekside-at-legacy.jpg', smartMoveHighlights: 'Walk to Legacy West shopping and dining. Steps from major corporate headquarters. Resort-style amenities with a vibrant community atmosphere.' },
+  { id: 'pla-3', name: 'The Dallas Parkway Collection', city: 'Plano', pool: 'Plano', address: 'Legacy West, Plano, TX 75024', price: 'Studio $2,350+ · 1bd $2,050+ · 2bd $3,500+', beds: 'Studio - 2 Beds', imageUrl: '/apartments/kincaid-at-legacy.jpg', smartMoveHighlights: 'High-end boutique community in the Legacy corridor. Upscale finishes, private garages, and a rooftop terrace.' },
+  { id: 'pla-4', name: 'Communications Park Residences', city: 'Plano', pool: 'Plano', address: 'Legacy Tech Corridor, Plano, TX 75024', price: '1bd $2,500+ · 2bd $3,550+', beds: '1-2 Beds', imageUrl: '/apartments/instrata-legacy.jpg', smartMoveHighlights: 'Boutique luxury apartments in the Legacy Tech Corridor. Walkable to major corporate campuses. Corporate housing friendly.' },
+  { id: 'ric-1', name: 'CityLine Axis Apartments', city: 'Richardson', pool: 'Richardson', address: 'CityLine District, Richardson, TX 75082', price: 'Studio $1,250+ · 1bd $1,400+ · 2bd $2,000+', beds: 'Studio - 2 Beds', imageUrl: '/apartments/axis-110.jpg', smartMoveHighlights: 'Modern luxury in the CityLine district. Walkable to dining and shops with direct DART access. Keyless entry and two resort-style pools.' },
+  { id: 'ric-2', name: 'Galatyn Station Flats', city: 'Richardson', pool: 'Richardson', address: 'CityLine District, Richardson, TX 75082', price: 'Studio $1,500+ · 1bd $1,650+ · 2bd $2,250+ · 3bd $2,850+', beds: 'Studio - 3 Beds', imageUrl: '/apartments/ovation-galatyn-park.jpg', smartMoveHighlights: 'Steps from the CityLine district DART station. Walkable to restaurants and retail. Availability updated regularly.' },
+  { id: 'ric-3', name: 'The Ledger Residences', city: 'Richardson', pool: 'Richardson', address: 'CityLine District, Richardson, TX 75082', price: '1bd $1,600+ · 2bd $2,650+', beds: '1-2 Beds', imageUrl: '/apartments/the-register.jpg', smartMoveHighlights: 'Tall ceilings with quartz countertops and premium finishes. Golf simulator, yoga studio, and private dining room.' },
+  { id: 'ric-4', name: 'CityLine Anthem Flats', city: 'Richardson', pool: 'Richardson', address: 'CityLine District, Richardson, TX 75082', price: '1bd $1,375+ · 2bd $2,100+', beds: '1-2 Beds', imageUrl: '/apartments/anthem-cityline.jpg', smartMoveHighlights: 'Walk to CityLine restaurants, bars, and entertainment. DART accessible. Dog park and resort-style pool on-site.' },
+  { id: 'ric-5', name: 'Breck Pointe Apartments', city: 'Richardson', pool: 'Richardson', address: 'East Richardson, TX 75082', price: '1bd $1,250+ · 2bd $1,600+', beds: '1-2 Beds', imageUrl: '/apartments/breckinridge-point.jpg', smartMoveHighlights: 'Near a local golf course. Two resort pools, splash pad, and a theater room. Great value with top-rated area schools.' },
+  { id: 'add-1', name: 'Circle Park Residences', city: 'Addison', pool: 'Addison', address: 'Addison Circle, TX 75001', price: '1bd $1,350+ · 2bd $2,000+ · 3bd $2,500+', beds: '1-3 Beds', imageUrl: '/apartments/cortland-addison-circle.jpg', smartMoveHighlights: 'Heart of Addison Circle next to a local pet park. Minutes from major retail. Highly rated resident community.' },
+  { id: 'add-2', name: 'Addison Circle Flats', city: 'Addison', pool: 'Addison', address: 'Addison Circle, TX 75001', price: '1bd $1,300+ · 2bd $1,900+', beds: '1-2 Beds', imageUrl: '/apartments/maa-addison-circle.jpg', smartMoveHighlights: 'Walkable Addison Circle with restaurants and entertainment steps away. Modern finishes and easy Tollway access.' },
+  { id: 'add-3', name: 'Treehouse at Midway', city: 'Addison', pool: 'Addison', address: 'North Addison, TX 75001', price: '1bd $1,450+ · 2bd $2,000+ · 3bd $2,700+', beds: '1-3 Beds', imageUrl: '/apartments/amli-treehouse.jpg', smartMoveHighlights: "One of Addison's newer communities along a scenic trail. Acres of green space, two dog parks, and unique live/work homes." },
+  { id: 'add-4', name: 'Bent Tree Communities', city: 'Addison', pool: 'Addison', address: 'North Addison, TX 75001', price: '1bd $1,150+ · 2bd $1,600+ · 3bd $2,100+', beds: '1-3 Beds', imageUrl: '/apartments/communities-bent-tree.jpg', smartMoveHighlights: 'Spacious apartments and townhomes with 2-car garages available. Tennis courts, pickleball, dog parks, and pools.' },
 ];
-export const getFeaturedApartments = (): Apartment[] => {
-  return apartments.filter(apt => apt.featured);
-};
-export const getAllApartments = (): Apartment[] => {
-  return apartments;
-};

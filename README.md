@@ -1,30 +1,35 @@
 # Smart Move DFW
 
-A modern real estate platform for apartment locating and property investment services in the Dallas-Fort Worth metroplex.
+A real estate platform for apartment locating and property investment in the Dallas-Fort Worth area.
 
-# Tech Stack
+**Live site:** https://smartmovedfw.com
 
-- Next.js 14
-- React 18
-- TypeScript
-- Tailwind CSS
-- Vercel
+![Homepage](docs/smartmove-01-home.png)
 
-# Getting Started
+## Tech stack
 
-Install dependencies:
+Next.js 14, React 18, TypeScript, Tailwind CSS, deployed on Vercel
+
+## Getting started
+
 ```bash
 npm install
-```
-
-Run development server:
-```bash
 npm run dev
 ```
 
-Open http://localhost:3000
+Open `http://localhost:3000`.
+
+## Project structure
+
+- `app/`: pages and API routes
+- `components/`: shared React components (header, footer, listing cards)
+- `data/`: apartment, home, and buy/sell listing data
+- `public/`: static assets
+
+## Note on the data in this repo
+
+The listing data here is sample data for demonstration, not the live inventory shown on the site above. Same structure and interfaces as production, different content.
 
 ## Deployment
 
-Deployed on Vercel with automated CI/CD from GitHub.
-
+Deployed on Vercel with CI/CD from GitHub on every push to main.
