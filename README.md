@@ -28,7 +28,7 @@ Open `http://localhost:3000`.
 
 ## Note on the data in this repo
 
-The listing data here is sample data for demonstration, not the live inventory shown on the site above. Same structure and interfaces as production, different content.
+The listing data here is sample data for demonstration, not the live inventory shown on the site above
 
 ## Deployment
 
