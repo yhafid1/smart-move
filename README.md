@@ -10,15 +10,6 @@ A real estate platform for apartment locating and property investment in the Dal
 
 Next.js 14, React 18, TypeScript, Tailwind CSS, deployed on Vercel
 
-## Getting started
-
-```bash
-npm install
-npm run dev
-```
-
-Open `http://localhost:3000`.
-
 ## Project structure
 
 - `app/`: pages and API routes
